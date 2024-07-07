@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
-import { getMovieCredits, getMovieDetails, getTrendingMovies as fetchTrendingMoviesAPI } from '../services/the-movies-db-api';
+import { getMovieCredits, getMovieDetails, getTrendingMovies as fetchTrendingMoviesAPI, searchMoviesWithQuery } from '../services/the-movies-db-api';
 
 const MovieContext = createContext<IMovieContext | undefined>(undefined);
 
@@ -31,7 +31,7 @@ export const MovieProvider: React.FC<{ children: ReactNode }> = ({ children }) =
 
   const searchMovies = async (query: string, page: number): Promise<IMovie[]> => {
     try {
-      return await searchMovies(query, page);
+      return await searchMoviesWithQuery(query, page);
     } catch (error) {
       console.error('Error searching movies:', error);
       return [];
