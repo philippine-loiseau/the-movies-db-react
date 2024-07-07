@@ -59,6 +59,7 @@ const MovieDetail: React.FC = () => {
 
   return (
     <div className="p-4">
+      <HelmetMeta title={movie.title} description={movie.tagline}></HelmetMeta>
       <Link
         to="/"
         className="bg-gradient-to-r from-tmdb-green to-tmdb-blue text-transparent bg-clip-text inline-flex items-center mb-4 hover:text-tmdb-dark-blue"
