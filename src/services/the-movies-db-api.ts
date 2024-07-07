@@ -38,7 +38,7 @@ export const getMovieDetails = async (id: number | undefined): Promise<IMovie> =
   }
 };
 
-export const searchMovies = async (query: string, page: number) => {
+export const searchMoviesWithQuery = async (query: string, page: number) => {
   try {
     const response = await api.get('/search/movie', {
       params: {
